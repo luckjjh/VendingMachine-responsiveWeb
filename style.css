@@ -1,0 +1,336 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+  background-color: #eae8fe;
+}
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  width: 386px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+  margin-top: 247px;
+  flex-wrap: wrap;
+}
+
+.vending-machine {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0 14px;
+  width: 360px;
+  height: 545px;
+  background-color: #ffffff;
+  padding: 31px 27px 28px;
+}
+
+.user-info {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0 14px;
+  width: 360px;
+  height: 545px;
+}
+
+.stuff-box {
+  display: grid;
+  box-sizing: border-box;
+  width: 306px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.items {
+  height: 130px;
+  background-color: #ffffff;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+  border-radius: 10px;
+  text-align: center;
+}
+.items:hover {
+  outline: 3px solid #6327fe;
+}
+
+.items-img {
+  margin-top: 11px;
+  width: 36px;
+  height: 65px;
+}
+
+.items-text {
+  margin-top: 6px;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 13px;
+}
+
+.items-value {
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 7px;
+  padding: 5px;
+  width: 70px;
+  height: 22px;
+  border-radius: 50px;
+  background-color: #6327fe;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  color: #ffffff;
+}
+
+.sold-out-img {
+  position: absolute;
+  float: left;
+  top: 49px;
+  left: 19px;
+  width: 57px;
+  height: 44px;
+}
+.sold-out-bg {
+  position: absolute;
+  float: left;
+  top: 0px;
+  width: 94px;
+  height: 130px;
+  border-radius: 10px;
+  background-color: black;
+  opacity: 0.8;
+}
+
+.function-box {
+  display: grid;
+  box-sizing: border-box;
+  margin-top: 20px;
+  width: 306px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.function-box > * {
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.function-box > button:active {
+  transform: translate(3px, 3px);
+}
+
+.left-coin {
+  padding: 6px 10px 7px;
+  grid-column: 1/3;
+  height: 33px;
+  background-color: #eae8fe;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.left-coin .left-coin-text {
+  float: left;
+}
+.left-coin .left-coin-display {
+  float: right;
+}
+.left-coin .won {
+  margin-left: 5px;
+  float: right;
+}
+.return-coin-btn {
+  height: 33px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19px;
+  background-color: #ffffff;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+}
+.input-coin {
+  height: 33px;
+  grid-column: 1/3;
+  padding: 6px 6px 8px;
+  border: 1px solid #bdbdbd;
+  background-color: #ffffff;
+}
+.insert-coin-btn {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19px;
+  height: 32px;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+  background-color: #ffffff;
+}
+.user-stuff-list {
+  overflow-y: scroll;
+  height: 106px;
+  padding: 12px 0 0 12px;
+  grid-column: 1/3;
+  background-color: #eae8fe;
+  border: 1px solid #bdbdbd;
+}
+
+.user-stuff-list > .list-items {
+  box-sizing: border-box;
+  padding: 8px;
+  width: 170px;
+  height: 46px;
+  margin-bottom: 6px;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.list-items-img {
+  margin-top: -2px;
+  margin-left: 2px;
+  width: 18px;
+  height: 33px;
+  float: left;
+}
+
+.user-stuff-list > .items-text,
+.list-items > .items-text {
+  float: left;
+  margin: 8.5px 10px;
+  color: #333333;
+}
+
+.item-cnt {
+  float: right;
+  box-sizing: border-box;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.get-btn {
+  height: 106px;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 19px;
+  color: #ffffff;
+  background-color: #6327fe;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+.user-money-box {
+  box-sizing: border-box;
+  height: 50px;
+  padding: 9px 27px;
+  background-color: #ffffff;
+}
+
+.user-money {
+  box-sizing: border-box;
+  padding: 6px 10px;
+  width: 306px;
+  height: 32px;
+  border-radius: 5px;
+  background-color: #eae8fe;
+}
+
+.user-money-text {
+  float: left;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+}
+.user-money-display {
+  float: right;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+.user-money .won {
+  float: right;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  margin-left: 5px;
+}
+
+.user-items {
+  margin-top: 20px;
+  box-sizing: border-box;
+  padding: 25px 27px 0;
+  text-align: center;
+  height: 474px;
+  background-color: #ffffff;
+}
+.user-items-title {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.user-list {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 13px;
+  padding: 11px 17px 0 11px;
+  width: 306px;
+  height: 364px;
+  background-color: #eae8fe;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.total-cost {
+  margin-top: 6px;
+  float: right;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  color: #000000;
+}
+
+.user-list > .list-items {
+  padding: 8px;
+  height: 46px;
+  width: 276px;
+  margin-bottom: 6px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.user-list > .list-items:hover {
+  outline: 3px solid #6327fe;
+}
+
+.user-stuff-list::-webkit-scrollbar,
+.user-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.user-stuff-list::-webkit-scrollbar-thumb,
+.user-list::-webkit-scrollbar-thumb {
+  border-right: 2px solid transparent;
+  border-left: 2px solid transparent;
+  background: #ffffff;
+  background-clip: padding-box;
+  border-radius: 100px;
+}
+
+.user-stuff-list::-webkit-scrollbar-track,
+.user-list::-webkit-scrollbar-track {
+  background-color: transparent;
+}
