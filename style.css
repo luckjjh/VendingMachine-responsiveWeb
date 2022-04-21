@@ -16,26 +16,37 @@ body {
   overflow: hidden;
 }
 
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .logo {
   position: absolute;
-  width: 386px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  width: 100%;
+  max-width: 386px;
+  height: 180px;
+  background-image: url("./img/Group.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
 }
 
 .main {
   position: absolute;
   display: flex;
   justify-content: center;
-  min-width: 100vw;
+  min-width: 100%;
   margin-top: 247px;
+  gap: 0 28px;
   flex-wrap: wrap;
 }
 
 .vending-machine {
   display: inline-block;
   box-sizing: border-box;
-  margin: 0 14px;
   width: 360px;
   height: 545px;
   background-color: #ffffff;
@@ -45,7 +56,6 @@ body {
 .user-info {
   display: inline-block;
   box-sizing: border-box;
-  margin: 0 14px;
   width: 360px;
   height: 545px;
 }
@@ -333,4 +343,22 @@ body {
 .user-stuff-list::-webkit-scrollbar-track,
 .user-list::-webkit-scrollbar-track {
   background-color: transparent;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  body {
+    background-color: #ffffff;
+  }
+  .main {
+    margin-top: 65px;
+  }
+
+  .logo {
+    width: 166px;
+    height: 70px;
+  }
+
+  .user-items {
+    margin-top: 16px;
+  }
 }
