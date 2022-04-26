@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+@import url("./reset.css");
 
 * {
   font-family: "Noto Sans KR", sans-serif;
@@ -7,24 +8,13 @@
 body {
   background-color: #eae8fe;
 }
-.blind {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-}
 
 .head {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
 .logo {
-  position: absolute;
-  top: 0;
   width: 100%;
   max-width: 386px;
   height: 180px;
@@ -35,77 +25,58 @@ body {
 }
 
 .main {
-  position: absolute;
   display: flex;
   justify-content: center;
-  min-width: 100%;
   margin-top: 247px;
   gap: 0 28px;
   flex-wrap: wrap;
 }
 
 .vending-machine {
-  display: inline-block;
   box-sizing: border-box;
-  width: 360px;
-  height: 545px;
   background-color: #ffffff;
-  padding: 31px 27px 28px;
+  padding: 30px 28px 27px;
 }
 
-.user-info {
-  display: inline-block;
-  box-sizing: border-box;
-  width: 360px;
-  height: 545px;
-}
-
-.stuff-box {
+.vending-machine .item-box {
   display: grid;
-  box-sizing: border-box;
-  width: 306px;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
-.items {
-  height: 130px;
+.item-box .items {
+  padding: 10px 0 9px;
   background-color: #ffffff;
-  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
   border-radius: 10px;
   text-align: center;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
 }
-.items:hover {
+.item-box .items:hover {
   outline: 3px solid #6327fe;
 }
 
-.items-img {
-  margin-top: 11px;
+.items .items-img {
   width: 36px;
-  height: 65px;
 }
 
-.items-text {
-  margin-top: 6px;
+.items .items-text {
   font-weight: 500;
+  margin-top: 6px;
   font-size: 9px;
-  line-height: 13px;
 }
 
-.items-value {
+.items .items-value {
   display: inline-block;
   box-sizing: border-box;
   margin-top: 7px;
-  padding: 5px;
-  width: 70px;
-  height: 22px;
+  padding: 5px 16px;
   border-radius: 50px;
   background-color: #6327fe;
   font-weight: 500;
   font-size: 12px;
-  line-height: 100%;
   color: #ffffff;
 }
 
+/* 품절 표시 */
 .sold-out-img {
   position: absolute;
   float: left;
@@ -129,7 +100,6 @@ body {
   display: grid;
   box-sizing: border-box;
   margin-top: 20px;
-  width: 306px;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
 }
@@ -143,7 +113,7 @@ body {
   transform: translate(3px, 3px);
 }
 
-.left-coin {
+.function-box .left-coin {
   padding: 6px 10px 7px;
   grid-column: 1/3;
   height: 33px;
@@ -152,17 +122,17 @@ body {
   font-size: 14px;
   line-height: 20px;
 }
-.left-coin .left-coin-text {
+.function-box .left-coin .left-coin-text {
   float: left;
 }
-.left-coin .left-coin-display {
+.function-box .left-coin .left-coin-display {
   float: right;
 }
-.left-coin .won {
+.function-box .left-coin .won {
   margin-left: 5px;
   float: right;
 }
-.return-coin-btn {
+.function-box .return-coin-btn {
   height: 33px;
   font-weight: 500;
   font-size: 13px;
@@ -170,14 +140,14 @@ body {
   background-color: #ffffff;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
 }
-.input-coin {
+.function-box .input-coin {
   height: 33px;
   grid-column: 1/3;
   padding: 6px 6px 8px;
   border: 1px solid #bdbdbd;
   background-color: #ffffff;
 }
-.insert-coin-btn {
+.function-box .insert-coin-btn {
   font-weight: 500;
   font-size: 13px;
   line-height: 19px;
@@ -185,23 +155,28 @@ body {
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
   background-color: #ffffff;
 }
-.user-stuff-list {
+.function-box .user-stuff-list {
   overflow-y: scroll;
   height: 106px;
-  padding: 12px 0 0 12px;
+  padding: 12px 7px 0 12px;
   grid-column: 1/3;
   background-color: #eae8fe;
   border: 1px solid #bdbdbd;
 }
 
-.user-stuff-list > .list-items {
+.list-items {
   box-sizing: border-box;
   padding: 8px;
-  width: 170px;
+  width: 100%;
   height: 46px;
+  font-size: 9px;
   margin-bottom: 6px;
   border-radius: 5px;
   background-color: #ffffff;
+}
+
+.list-items:hover {
+  outline: 3px solid #6327fe;
 }
 
 .list-items-img {
@@ -215,19 +190,21 @@ body {
 .user-stuff-list > .items-text,
 .list-items > .items-text {
   float: left;
-  margin: 8.5px 10px;
+  margin: 10px 10px;
   color: #333333;
 }
 
 .item-cnt {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
   float: right;
   box-sizing: border-box;
-  padding: 5px;
   width: 30px;
   height: 30px;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
-  text-align: center;
 }
 
 .get-btn {
@@ -245,7 +222,6 @@ body {
   padding: 9px 27px;
   background-color: #ffffff;
 }
-
 .user-money {
   box-sizing: border-box;
   padding: 6px 10px;
@@ -254,7 +230,6 @@ body {
   border-radius: 5px;
   background-color: #eae8fe;
 }
-
 .user-money-text {
   float: left;
   font-weight: 500;
@@ -275,13 +250,11 @@ body {
   line-height: 20px;
   margin-left: 5px;
 }
-
 .user-items {
   margin-top: 20px;
   box-sizing: border-box;
-  padding: 25px 27px 0;
+  padding: 25px 27px 53px;
   text-align: center;
-  height: 474px;
   background-color: #ffffff;
 }
 .user-items-title {
@@ -289,12 +262,10 @@ body {
   font-size: 14px;
   line-height: 20px;
 }
-
 .user-list {
   overflow-y: scroll;
-  overflow-x: hidden;
   margin-top: 13px;
-  padding: 11px 17px 0 11px;
+  padding: 12px 18px 0 12px;
   width: 306px;
   height: 364px;
   background-color: #eae8fe;
@@ -302,7 +273,6 @@ body {
   box-sizing: border-box;
   border-radius: 5px;
 }
-
 .total-cost {
   margin-top: 6px;
   float: right;
@@ -312,20 +282,7 @@ body {
   color: #000000;
 }
 
-.user-list > .list-items {
-  padding: 8px;
-  height: 46px;
-  width: 276px;
-  margin-bottom: 6px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  background-color: #ffffff;
-}
-
-.user-list > .list-items:hover {
-  outline: 3px solid #6327fe;
-}
-
+/* 스크롤 디자인 */
 .user-stuff-list::-webkit-scrollbar,
 .user-list::-webkit-scrollbar {
   width: 8px;
@@ -345,7 +302,8 @@ body {
   background-color: transparent;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+/* 반응형 웹 */
+@media screen and (max-device-width: 480px) {
   body {
     background-color: #ffffff;
   }

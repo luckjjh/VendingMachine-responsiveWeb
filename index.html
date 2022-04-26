@@ -6,11 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./style.css" />
     <title>vending machine</title>
   </head>
@@ -18,10 +13,10 @@
     <header class="head">
       <h1 class="logo ir">벤딩머신</h1>
     </header>
-
     <main class="main">
       <section class="vending-machine">
-        <ul class="stuff-box">
+        <h2 class="ir">자판기 입니다</h2>
+        <ul class="item-box">
           <li class="items">
             <img class="items-img" src="./img/cola-red.png" alt="빨간 콜라" />
             <p class="items-text">Original_Cola</p>
@@ -73,6 +68,7 @@
           </li>
         </ul>
         <section class="function-box">
+          <h3 class="ir">자판기 기능을 활용할 수 있는 버튼들이 있습니다.</h3>
           <div class="left-coin">
             <p class="left-coin-text">잔액 :</p>
             <p class="won">원</p>
@@ -80,12 +76,14 @@
           </div>
           <button class="return-coin-btn">거스름돈 반환</button>
           <input
+            id="input-coin-box"
             class="input-coin"
             type="number"
             min="100"
             step="100"
             placeholder="입금액 입력"
           />
+          <label class="ir" for="input-coin-box">입금액 입력 칸</label>
           <button class="insert-coin-btn">입금</button>
           <ul class="user-stuff-list">
             <li class="list-items">
@@ -108,7 +106,9 @@
         </section>
       </section>
       <section class="user-info">
+        <h2 class="ir">사용자 정보가 있는 부분입니다.</h2>
         <section class="user-money-box">
+          <h3 class="ir">사용자의 소지금이 있는 부분입니다.</h3>
           <div class="user-money">
             <p class="user-money-text">소지금 :</p>
             <p class="won">원</p>
@@ -116,6 +116,7 @@
           </div>
         </section>
         <section class="user-items">
+          <h3 class="ir">구매한 음료들이 있는 부분입니다.</h3>
           <h2 class="user-items-title">획득한 음료</h2>
           <ul class="user-list">
             <li class="list-items">
