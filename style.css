@@ -303,7 +303,8 @@ body {
 }
 
 /* 반응형 웹 */
-@media screen and (max-device-width: 480px) {
+
+@media only screen and (max-device-width: 480px) {
   body {
     background-color: #ffffff;
   }
