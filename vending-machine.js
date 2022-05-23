@@ -115,20 +115,20 @@ class User{
 
 let user;
 
-// (function initInput(){
-//     let inputMoney = prompt("초기 자본을 입력해주세요");
-//     if(inputMoney===""||isNaN(inputMoney)||inputMoney<=0){
-//         alert("양의 정수만 입력 가능합니다.")
-//         initInput();
-//     }else{
-//         user = new User(inputMoney);
-//         console.log(user);
-//         myMoneyDisplay.innerHTML=numToMoney(user.money);
-//     }
-// })();
+(function initInput(){
+    let inputMoney = prompt("초기 자본을 입력해주세요");
+    if(inputMoney===""||isNaN(inputMoney)||inputMoney<=0){
+        alert("양의 정수만 입력 가능합니다.")
+        initInput();
+    }else{
+        user = new User(inputMoney);
+        console.log(user);
+        myMoneyDisplay.innerHTML=numToMoney(user.money);
+    }
+})();
 
-user = new User(100000);
-myMoneyDisplay.innerHTML=numToMoney(user.money);
+// user = new User(100000);
+// myMoneyDisplay.innerHTML=numToMoney(user.money);
 
 
 
