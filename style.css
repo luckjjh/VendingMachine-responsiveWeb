@@ -49,6 +49,7 @@ body {
   border-radius: 10px;
   text-align: center;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+  cursor: pointer;
 }
 .item-box .items:hover {
   outline: 3px solid #6327fe;
@@ -77,23 +78,17 @@ body {
 }
 
 /* 품절 표시 */
-.sold-out-img {
-  position: absolute;
-  float: left;
-  top: 49px;
-  left: 19px;
-  width: 57px;
-  height: 44px;
-}
-.sold-out-bg {
+.sold-out {
   position: absolute;
   float: left;
   top: 0px;
   width: 94px;
   height: 130px;
   border-radius: 10px;
-  background-color: black;
-  opacity: 0.8;
+  background-image: url('./img/soldoutImg.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: default;
 }
 
 .function-box {
