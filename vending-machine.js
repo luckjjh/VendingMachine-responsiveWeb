@@ -55,7 +55,7 @@ class User{
         this.userItems = [];
     }
     input(i){
-        if(this.money<i){
+        if(parseInt(this.money)< parseInt(i)){
             alert("잔액이 부족합니다.");
             return;
         }
