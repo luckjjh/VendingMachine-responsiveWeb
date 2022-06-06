@@ -36,6 +36,7 @@ body {
   box-sizing: border-box;
   background-color: #ffffff;
   padding: 30px 28px 27px;
+  width: 360px;
 }
 
 .vending-machine .item-box {
@@ -275,6 +276,10 @@ body {
   font-size: 12px;
   line-height: 17px;
   color: #000000;
+}
+
+.user-info{
+  width: 360px;
 }
 
 /* 스크롤 디자인 */

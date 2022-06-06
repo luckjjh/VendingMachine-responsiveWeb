@@ -68,7 +68,7 @@ class User{
     }
     returnMoney(){
         if(this.inputMoney===0){
-            alert("반환할 거스름돈이 없습니다.")
+            alert("반환할 거스름돈이 없습니다.");
             return;
         }
         this.money += this.inputMoney;
@@ -95,13 +95,12 @@ class User{
                 let colaCost = i.cost;
                 let colaCnt = i.cnt;
                 let curIdx = this.userItems.findIndex(i=>i.name===colaName);
-
                 if(curIdx===-1){
                     this.userItems.push({name:colaName,cnt:colaCnt,cost:colaCost});
                     basketItems[idx].removeEventListener('click',removeBasket);
                     userItemList.appendChild(basketItems[idx]);
                 }else{
-                    this.userItems[curIdx].cnt++;
+                    this.userItems[curIdx].cnt+=colaCnt;
                     let curItem = userItemList.querySelector(`li:nth-child(${curIdx+1})`);
                     let curCnt = curItem.querySelector('.item-cnt');
                     curCnt.innerHTML = this.userItems[curIdx].cnt;
@@ -110,25 +109,26 @@ class User{
             });
             basket = [];
         }
+        console.log(this.userItems);
     }
 }
 
 let user;
 
-(function initInput(){
-    let inputMoney = prompt("초기 자본을 입력해주세요");
-    if(inputMoney===""||isNaN(inputMoney)||inputMoney<=0){
-        alert("양의 정수만 입력 가능합니다.")
-        initInput();
-    }else{
-        user = new User(inputMoney);
-        console.log(user);
-        myMoneyDisplay.innerHTML=numToMoney(user.money);
-    }
-})();
+// (function initInput(){
+//     let inputMoney = prompt("초기 자본을 입력해주세요");
+//     if(inputMoney===""||isNaN(inputMoney)||inputMoney<=0){
+//         alert("양의 정수만 입력 가능합니다.")
+//         initInput();
+//     }else{
+//         user = new User(inputMoney);
+//         console.log(user);
+//         myMoneyDisplay.innerHTML=numToMoney(user.money);
+//     }
+// })();
 
-// user = new User(100000);
-// myMoneyDisplay.innerHTML=numToMoney(user.money);
+user = new User(50000);
+myMoneyDisplay.innerHTML=numToMoney(user.money);
 
 
 
